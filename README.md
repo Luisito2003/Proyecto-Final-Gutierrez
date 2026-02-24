@@ -96,3 +96,7 @@ Este proyecto es solo para fines educativos y de práctica.
 ---
 
 ¡Gracias por usar Tienda Luis! Si tienes sugerencias o encuentras algún problema, no dudes en abrir un issue o contribuir.
+
+## Proyecto desplegado
+
+[ecomerce-corporacion-bethel.netlify.app](https://ecomerce-corporacion-bethel.netlify.app/)
