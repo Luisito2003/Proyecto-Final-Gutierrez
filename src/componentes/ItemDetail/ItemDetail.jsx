@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { miContexto } from "../../providers/CardProvider";
+import "./ItemDetail.css";
 
-const ItemDetail = ({id, nombre, precio, img}) => {
+export const ItemDetail = ({ id, nombre, precio, img, detalles }) => {
+  const valorActual = useContext(miContexto);
+
+  const handleAgregarAlCarrito = () => { 
+    valorActual.setCantidad(10);
+  };
+  
   return (
-    <div>
-        <h2>Nombre: {nombre}</h2>
-        <h3>Precio:{precio}</h3>
-        <h3>ID:  {id}</h3>
-        <img src={img} alt={nombre} />
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        Deleniti eveniet nam placeat pariatur ipsa earum. Assumenda mollitia neque voluptates animi, possimus distinctio recusandae quos, nostrum natus ducimus laudantium incidunt et!</p>
-        <button>Agregar al carrito</button>
+    <div className="item-detail-container">
+      <h2 className="item-detail-title">{nombre}</h2>
+      <p className="item-detail-id">ID: {id}</p>
+      
+      <div className="item-detail-img-wrapper">
+        <img className="item-detail-img" src={img} alt={nombre} />
+      </div>
+      
+      <h3 className="item-detail-price">S/.{precio}</h3>
+      
+      <p className="item-detail-description">
+        {detalles}
+      </p>
+      
+      <button className="item-detail-btn" onClick={handleAgregarAlCarrito}>
+        Agregar al carrito
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;

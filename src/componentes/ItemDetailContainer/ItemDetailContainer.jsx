@@ -5,16 +5,19 @@ import { useParams } from 'react-router-dom'
 
 
 const ItemDetailContainer = () => {
-    const[producto, setProducto]=useState(null)
-    const params = useParams()
 
-    useEffect(()=>{
-        getUnProducto(params.id)
-        .then(respuesta=>setProducto(respuesta))
-        
-    },[])
+  const[producto, setProducto]=useState(null)
+  const params = useParams()
+  console.log("🚀 ~ ItemDetailContainer ~ params:", params)
+  
 
-  return (
+  useEffect(() => {
+    console.log("🚀 ~ ItemDetailContainer ~ params.id:", params.id)
+    getUnProducto(params.id)
+      .then(respuesta => setProducto(respuesta))
+    }, [])
+    
+    return (
     <div>
         <ItemDetail {...producto}/>
     </div>

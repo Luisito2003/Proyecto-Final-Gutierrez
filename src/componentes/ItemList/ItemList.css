@@ -1,4 +1,26 @@
-.contenedorProductos{
-    display: flex;
-    flex-wrap: wrap;
+.item-list-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  .item-list-container {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .item-list-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .item-list-container {
+    grid-template-columns: 1fr; 
+  }
 }

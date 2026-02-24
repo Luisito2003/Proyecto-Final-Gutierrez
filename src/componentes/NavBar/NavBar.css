@@ -1,11 +1,74 @@
-header{
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid black ;
+    padding: 15px 50px;
+    background-color: #11225f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-li{
-    display: inline-block;
-    margin: 10px;
+
+header a {
+    text-decoration: none;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+header h1:hover {
+    color: #3498db; 
+}
+
+header nav ul {
+    display: flex;
+    gap: 35px; 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+
     cursor: pointer;
+}
+
+
+header nav ul li a {
+    color: #d6d4d4;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #3498db;
+}
+
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
 }
