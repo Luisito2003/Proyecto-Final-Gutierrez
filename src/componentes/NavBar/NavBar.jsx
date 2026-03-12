@@ -21,7 +21,6 @@ const NavBar = () => {
             </li>
           </ul>
         </nav>
-        
         <CartWidget/>
     </header>
   )
